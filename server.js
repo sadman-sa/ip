@@ -3,12 +3,12 @@ const app = express()
 const server = require("http").createServer(app)
 const io = require('socket.io')(server, {cors: {origin:"*"}})
 
-const port = process.env.PORT || 8000;
-
 app.get('/',function(req, res){
     res.sendFile('index.html',{root:__dirname})
 });
-
+server.listen(process.env.PORT || 3000, ()=>{
+    console.log("server running");
+});
 io.on("connection", (socket)=>{
     socket.on("IP", (data)=>{
         console.log(data)
@@ -18,9 +18,3 @@ io.on("connection", (socket)=>{
         console.log(data)
     })
 })
-
-
-
-server.listen(port, ()=>{
-    console.log("server running");
-});
