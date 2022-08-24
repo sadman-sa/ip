@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 
 const server = require('http').createServer(app)
-server.listen(process.env.PORT || 3001, ()=> {
+server.listen(process.env.PORT ||* , ()=> {
     console.log("server running...")
   })
 
