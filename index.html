@@ -1,0 +1,14 @@
+<hi>hi</hi>
+<script src="https://cdn.socket.io/4.5.0/socket.io.min.js" integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k" crossorigin="anonymous"></script>
+
+<button onclick="sendMessage()">click </button>
+
+
+<script>
+    const socket = io('http://localhost:3000/')
+    socket.on('connection')
+    const sendMessage = ()=>{
+        socket.emit('message', "hey it works fu7klfasdoijhfasdofad")
+    }
+
+</script>
